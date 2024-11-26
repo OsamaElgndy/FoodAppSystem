@@ -15,7 +15,7 @@ export class UseController {
 
   @Get()
   async findAll() {
-   return await this.PrismaService.user.findMany();
+  //  return await this.PrismaService.user.findMany();
   }
 
   @Get(':id')
