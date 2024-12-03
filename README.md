@@ -1,3 +1,84 @@
+# FoodAppSystem
+
+## Overview
+
+FoodAppSystem is a **real-time food ordering system** designed to provide users with a seamless experience for ordering food online. Built with **React**, **Vite**, **TypeScript**, and **Bootstrap** on the front-end, and **Node.js**, **Nest.js**, and **Supabase** for the back-end, this application supports secure user authentication, real-time order processing, and payment integration.
+
+The system provides two types of users: **customers** who can browse food menus, place orders, and manage their profiles, and **admins** who can manage food items, view orders, and perform other administrative tasks. Supabase is used for real-time data handling, authentication, and database interactions.
+
+## Features
+
+- **Real-time Ordering System:** Customers can browse food items, place orders, and track the status of their orders.
+- **User Authentication & Roles:** Users can register, log in, and manage their profiles. Admins have special privileges to manage the menu and orders.
+- **Food Menu Management:** Admins can add, update, and remove food items from the menu.
+- **Order Management:** Customers can place orders, view order history, and track their current orders. Admins can view and manage all customer orders.
+- **Payment Integration:** Secure payment system integrated for processing orders (placeholder for future payment systems like Stripe).
+- **Responsive UI:** Built using **React** and **Bootstrap** for a clean, responsive, and user-friendly interface.
+- **Real-time Data with Supabase:** Real-time updates of order statuses and user profiles.
+
+## Technologies Used
+
+- **React:** A JavaScript library for building user interfaces.
+- **Vite:** A fast build tool and development server for modern web apps.
+- **TypeScript:** A statically typed superset of JavaScript.
+- **Bootstrap:** A front-end framework for building responsive, mobile-first websites.
+- **Node.js:** JavaScript runtime for building server-side applications.
+- **Nest.js:** A framework for building scalable and maintainable server-side applications with TypeScript.
+- **Supabase:** A backend-as-a-service (BaaS) for real-time database management, authentication, and storage. Uses PostgreSQL as the database engine.
+
+## Features
+
+### Front-end
+
+- **Food Menu Browsing:** A clean UI to display food items in categories (e.g., appetizers, main courses, desserts).
+- **User Profiles:** Customers can manage their personal information, view order history, and update their account details.
+- **Real-time Updates:** The order status (e.g., preparing, completed) is updated in real-time for customers and admins.
+- **Responsive Design:** Fully responsive design to ensure smooth experience across desktops, tablets, and mobile devices.
+
+### Back-end
+
+- **RESTful APIs:** Built with **Node.js** and **Nest.js**, the backend supports CRUD operations for food items, orders, and users.
+- **Authentication:** JWT-based authentication for secure login and role-based access control for users and admins.
+- **Supabase Integration:** Real-time database with Supabase for managing user profiles, food items, and order history. Utilizes Supabase’s PostgreSQL database.
+- **Payment Integration (Placeholder):** Future integration for handling secure payment transactions for food orders.
+
+## API Endpoints
+
+### Authentication
+
+- **POST `/auth/register`** - Register a new user (customer/admin)
+- **POST `/auth/login`** - Log in with JWT-based authentication
+- **POST `/auth/logout`** - Log out the current user
+
+### Users
+
+- **GET `/users/:userId`** - Get user profile details
+- **PUT `/users/:userId`** - Update user profile information
+
+### Food Menu (Admin only)
+
+- **GET `/food`** - Retrieve all food items
+- **POST `/food`** - Add a new food item (Admin only)
+- **PUT `/food/:foodId`** - Update food item details (Admin only)
+- **DELETE `/food/:foodId`** - Delete a food item (Admin only)
+
+### Orders
+
+- **GET `/orders`** - Retrieve all orders (Admin only)
+- **GET `/orders/:orderId`** - Get details of a specific order (Admin & Customer)
+- **POST `/orders`** - Create a new order (Customer)
+- **PUT `/orders/:orderId`** - Update order status (Admin only)
+- **DELETE `/orders/:orderId`** - Cancel an order (Customer/Admin)
+
+## Installation
+
+### Docker Setup (Recommended)
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/FoodAppSystem.git
+
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
 </p>
